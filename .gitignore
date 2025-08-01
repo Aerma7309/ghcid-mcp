@@ -1,0 +1,18 @@
+/target
+/.direnv
+.crates.toml
+.crates*.json
+/.ssh
+/bin
+/node-sms-pdu
+/logs*
+/server_logs*
+.DS_Store
+.pre-commit-config.yaml
+
+
+# Added by cargo
+#
+# already existing elements were commented out
+
+#/target
