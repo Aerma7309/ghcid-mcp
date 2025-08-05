@@ -10,7 +10,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let server = EchoServer::new();
 
     // Serve the MCP server over stdin/stdout for Claude Desktop compatibility
-    serve_server(server, (stdin(), stdout())).await?;
+    serve_server(server, (stdin(), stdout()))
+        .await?
+        .waiting()
+        .await?;
 
     Ok(())
 }

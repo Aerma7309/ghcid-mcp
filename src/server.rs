@@ -1,4 +1,8 @@
-use rmcp::{ServerHandler, model::ServerInfo, tool};
+use rmcp::{
+    ServerHandler,
+    model::{ProtocolVersion, ServerCapabilities, ServerInfo},
+    tool,
+};
 use schemars::JsonSchema;
 use serde::Deserialize;
 
@@ -21,7 +25,7 @@ impl EchoServer {
 impl EchoServer {
     #[tool(description = "Echo back the provided text")]
     async fn echo(&self, #[tool(aggr)] request: EchoRequest) -> String {
-        request.text
+        "response from mcp server ".to_string() + request.text.as_str()
     }
 }
 
@@ -29,8 +33,8 @@ impl EchoServer {
 impl ServerHandler for EchoServer {
     fn get_info(&self) -> ServerInfo {
         ServerInfo {
-            protocol_version: Default::default(),
-            capabilities: Default::default(),
+            protocol_version: ProtocolVersion::V_2024_11_05,
+            capabilities: ServerCapabilities::builder().enable_tools().build(),
             server_info: rmcp::model::Implementation {
                 name: "echo-server".into(),
                 version: "0.1.0".into(),
