@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "ghcid-echo": {
-      "command": "ghcid-mcp",
-      "args": [],
-      "env": {}
-    }
-  }
-}
