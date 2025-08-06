@@ -25,7 +25,7 @@ impl EchoServer {
 impl EchoServer {
     #[tool(description = "Echo back the provided text")]
     async fn echo(&self, #[tool(aggr)] request: EchoRequest) -> String {
-        "response from mcp server ".to_string() + request.text.as_str()
+        "Response from mcp server ".to_string() + request.text.as_str()
     }
 }
 

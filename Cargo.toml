@@ -3,12 +3,20 @@ name = "ghcid-mcp"
 version = "0.1.0"
 edition = "2024"
 default-run = "ghcid-mcp"
-description = "A simple Model Context Protocol (MCP) server with echo tool"
+description = "A Model Context Protocol (MCP) server for Haskell compilation checking - helps AI agents get real-time feedback on Haskell project compilation status and errors"
 repository = "https://github.com/Aerma7309/ghcid-mcp"
 license = "MIT"
-authors = ["Your Name <your.email@example.com>"]
-keywords = ["mcp", "model-context-protocol", "ai", "tools"]
-categories = ["command-line-utilities", "development-tools"]
+authors = ["aerma7309@gmail.com"]
+keywords = [
+  "mcp",
+  "model-context-protocol",
+  "haskell",
+  "ghc",
+  "compilation",
+  "ai-tools",
+  "development",
+]
+categories = ["command-line-utilities", "development-tools", "compilers"]
 
 [dependencies]
 rmcp = { version = "0.1" }
